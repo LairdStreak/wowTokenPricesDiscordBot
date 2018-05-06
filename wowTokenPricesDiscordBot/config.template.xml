@@ -1,0 +1,6 @@
+<config>
+  <discord>
+    <webhookid>webhookid goes here</webhookid>
+    <webhooktoken>webhook token goes here</webhooktoken>
+  </discord>
+</config>
