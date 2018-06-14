@@ -3,6 +3,11 @@ import requests as r
 from pprint import pprint
 from BeautifulSoup import BeautifulSoup
 
+#from discord_hooks import Webhook
+#url = 'WEBHOOK_URL'
+#msg = Webhook(url,msg="Hello there! I'm a webhook \U0001f62e")
+#msg.post()
+
 
 def fetch_wowtokenprice():
     """[summary]
