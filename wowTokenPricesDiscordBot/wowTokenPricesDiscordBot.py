@@ -1,9 +1,8 @@
 
 import requests as r
 from pprint import pprint
+from discord_hooks import Webhook
 from BeautifulSoup import BeautifulSoup
-
-#from discord_hooks import Webhook
 #url = 'WEBHOOK_URL'
 #msg = Webhook(url,msg="Hello there! I'm a webhook \U0001f62e")
 #msg.post()
@@ -37,9 +36,9 @@ def push_data_to_discord_webhook(data,webhookid,webhookkey):
     if data != None:
         url = 'https://discordapp.com/api/webhooks/{}/{}'.format(webhookid,webhookkey)
         content = "Price {} \nLast Update {} \nChange {}".format(data['price'],data['lastupdate'],data['change'])
-        data = {'content': content}
-        headers = {'Content-type': 'application/json', 'Accept': 'text/plain'}
-        resp = r.post(url, json=data, headers=headers)
+        msg = Webhook(url,msg=content)
+        msg.add_field(name="Field", value='Test Text')
+        msg.post()
 
 def load_config():
     """[summary]
